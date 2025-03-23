@@ -4,7 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
 
 import "./globals.css";
-import { auth } from "@/app/auth";
+import { auth } from "@/auth";
 import { Toaster } from "sonner";
 import ThemeProvider from "@/context/Theme";
 
@@ -34,6 +34,13 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
 
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
+      </head>
       <SessionProvider session={session}>
         <body
           className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
